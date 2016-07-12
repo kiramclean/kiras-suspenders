@@ -52,7 +52,7 @@ module Suspenders
       invoke :create_local_heroku_setup
       invoke :create_heroku_apps
       invoke :create_github_repo
-      invoke :setup_segment
+      invoke :setup_analytics
       invoke :setup_bundler_audit
       invoke :setup_spring
       invoke :generate_default
@@ -190,9 +190,9 @@ module Suspenders
       end
     end
 
-    def setup_segment
-      say 'Setting up Segment'
-      build :setup_segment
+    def setup_analytics
+      say 'Setting up analytics'
+      build :setup_analytics
     end
 
     def setup_dotfiles

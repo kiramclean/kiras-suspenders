@@ -93,11 +93,11 @@ RSpec.describe "Suspend a new project with default configuration" do
       to exist("#{project_path}/config/initializers/rack_mini_profiler.rb")
   end
 
-  it "records pageviews through Segment if ENV variable set" do
+  it "records pageviews through Google analytics if ENV variable set" do
     expect(analytics_partial).
-      to include(%{<% if ENV["SEGMENT_KEY"] %>})
+      to include(%{- if ENV['GOOGLE_ANALYTICS_TRACKING_ID']})
     expect(analytics_partial).
-      to include(%{window.analytics.load("<%= ENV["SEGMENT_KEY"] %>");})
+      to include(%{ga('create', "\#{ENV['GOOGLE_ANALYTICS_TRACKING_ID']}", 'auto');})
   end
 
   it "raises on unpermitted parameters in all environments" do
@@ -281,7 +281,7 @@ RSpec.describe "Suspend a new project with default configuration" do
   end
 
   def analytics_partial
-    IO.read("#{project_path}/app/views/application/_analytics.html.erb")
+    IO.read("#{project_path}/app/views/application/_analytics.html.slim")
   end
 
   def read_project_file(path)

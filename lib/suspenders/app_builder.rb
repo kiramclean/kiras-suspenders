@@ -392,9 +392,9 @@ you can deploy to staging and production with:
       run "hub create #{repo_name}"
     end
 
-    def setup_segment
-      copy_file '_analytics.html.erb',
-        'app/views/application/_analytics.html.erb'
+    def setup_analytics
+      copy_file '_analytics.html.slim',
+        'app/views/application/_analytics.html.slim'
     end
 
     def setup_bundler_audit
