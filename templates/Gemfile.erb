@@ -2,9 +2,7 @@ source "https://rubygems.org"
 
 ruby "<%= Suspenders::RUBY_VERSION %>"
 
-gem "autoprefixer-rails"
 gem "delayed_job_active_record"
-gem "flutie"
 gem "honeybadger"
 gem "jquery-rails"
 gem "normalize-rails", "~> 3.0.0"
@@ -13,12 +11,15 @@ gem "puma"
 gem "rack-canonical-host"
 gem "rails", "<%= Suspenders::RAILS_VERSION %>"
 gem "recipient_interceptor"
-gem "sass-rails", "~> 5.0"
 gem "sprockets", ">= 3.0.0"
 gem "sprockets-es6"
 gem "suspenders"
-gem "title"
 gem "uglifier"
+
+# Views
+gem 'autoprefixer-rails'
+gem 'sass-rails', '~> 5.0'
+gem 'slim-rails'
 
 group :development do
   gem "listen"

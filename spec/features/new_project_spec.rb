@@ -14,7 +14,7 @@ RSpec.describe "Suspend a new project with default configuration" do
       /^ruby "#{Suspenders::RUBY_VERSION}"$/,
     )
     expect(gemfile_file).to match(
-      /^gem "autoprefixer-rails"$/,
+      /^gem 'autoprefixer-rails'$/,
     )
     expect(gemfile_file).to match(
       /^gem "rails", "#{Suspenders::RAILS_VERSION}"$/,
@@ -151,9 +151,9 @@ RSpec.describe "Suspend a new project with default configuration" do
   end
 
   it "configures language in html element" do
-    layout_path = "/app/views/layouts/application.html.erb"
+    layout_path = "/app/views/layouts/application.html.slim"
     layout_file = IO.read("#{project_path}#{layout_path}")
-    expect(layout_file).to match(/<html lang="en">/)
+    expect(layout_file).to match(/html lang='en'/)
   end
 
   it "configs active job queue adapter" do
