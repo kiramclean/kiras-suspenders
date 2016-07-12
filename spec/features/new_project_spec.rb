@@ -131,7 +131,7 @@ RSpec.describe "Suspend a new project with default configuration" do
   it "evaluates en.yml.erb" do
     locales_en_file = IO.read("#{project_path}/config/locales/en.yml")
 
-    expect(locales_en_file).to match(/application: #{app_name.humanize}/)
+    expect(locales_en_file).to match(/app_name: #{app_name.humanize}/)
   end
 
   it "configs :test email delivery method for development" do

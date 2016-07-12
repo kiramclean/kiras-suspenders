@@ -1,19 +1,12 @@
 en:
-  date:
-    formats:
-      default:
-        "%m/%d/%Y"
-      with_weekday:
-        "%a %m/%d/%y"
+  app_name: <%= app_name.humanize %>
 
   time:
     formats:
-      default:
-        "%a, %b %-d, %Y at %r"
-      date:
-        "%b %-d, %Y"
-      short:
-        "%B %d"
+      date: "%B %-e, %Y"
+      full: "%A, %B %-e at %-l:%M %P"
+      long: "%A, %B %-e"
+      time: "%-l:%M %P"
+      short: "%B %d"
+    minutes: minutes formats:
 
-  titles:
-    application: <%= app_name.humanize %>
