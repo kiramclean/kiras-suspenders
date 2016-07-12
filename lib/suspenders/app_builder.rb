@@ -256,7 +256,7 @@ module Suspenders
     end
 
     def configure_ci
-      template "circle.yml.erb", "circle.yml"
+      template 'circle.yml.erb', 'circle.yml'
     end
 
     def configure_i18n_for_test_environment
@@ -381,7 +381,7 @@ you can deploy to staging and production with:
             - bin/deploy staging
       YML
 
-      append_file "circle.yml", deploy_command
+      append_file 'circle.yml', deploy_command
     end
 
     def create_github_repo(repo_name)

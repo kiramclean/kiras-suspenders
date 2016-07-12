@@ -2,5 +2,5 @@ database:
   override:
     - bin/setup
 test:
-  override:
-    - COVERAGE=true bin/rake
+  post:
+    - bash <(curl -s https://codecov.io/bash)
