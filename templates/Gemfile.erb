@@ -4,22 +4,24 @@ ruby "<%= Suspenders::RUBY_VERSION %>"
 
 gem "delayed_job_active_record"
 gem "honeybadger"
-gem "jquery-rails"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
 gem "puma"
 gem "rack-canonical-host"
 gem "rails", "<%= Suspenders::RAILS_VERSION %>"
 gem "recipient_interceptor"
-gem "sprockets", ">= 3.0.0"
-gem "sprockets-es6"
 gem "suspenders"
-gem "uglifier"
 
 # Views
 gem 'autoprefixer-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
+
+# JS
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development do
   gem "listen"
