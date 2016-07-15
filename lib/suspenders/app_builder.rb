@@ -259,6 +259,10 @@ module Suspenders
       template 'circle.yml.erb', 'circle.yml'
     end
 
+    def configure_background_jobs
+      copy_file 'sidekiq.yml', 'config/sidekiq.yml'
+    end
+
     def configure_i18n_for_test_environment
       copy_file "i18n.rb", "spec/support/i18n.rb"
     end
@@ -266,10 +270,6 @@ module Suspenders
     def configure_i18n_for_missing_translations
       raise_on_missing_translations_in("development")
       raise_on_missing_translations_in("test")
-    end
-
-    def configure_background_jobs_for_rspec
-      run 'rails g delayed_job:active_record'
     end
 
     def configure_action_mailer_in_specs
@@ -301,7 +301,7 @@ Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
 
     def configure_active_job
       configure_application_file(
-        "config.active_job.queue_adapter = :delayed_job"
+        "config.active_job.queue_adapter = :sidekiq"
       )
       configure_environment "test", "config.active_job.queue_adapter = :inline"
     end
@@ -314,8 +314,12 @@ Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
       copy_file "puma.rb", "config/puma.rb", force: true
     end
 
-    def set_up_forego
+    def set_up_procfile
       copy_file "Procfile", "Procfile"
+    end
+
+    def add_development_procfile
+      copy_file "Procfile.dev", "Procfile.dev"
     end
 
     def install_refills

@@ -58,6 +58,10 @@ RSpec.describe "Suspend a new project with default configuration" do
     expect(File.stat(bin_setup_path)).to be_executable
   end
 
+  it 'adds development Procfile' do
+    expect(File).to exist("#{project_path}/Procfile.dev")
+  end
+
   it "adds support file for action mailer" do
     expect(File).to exist("#{project_path}/spec/support/action_mailer.rb")
   end
@@ -160,11 +164,17 @@ RSpec.describe "Suspend a new project with default configuration" do
     application_config = IO.read("#{project_path}/config/application.rb")
 
     expect(application_config).to match(
-      /^ +config.active_job.queue_adapter = :delayed_job$/
+      /^ +config.active_job.queue_adapter = :sidekiq$/
     )
     expect(test_config).to match(
       /^ +config.active_job.queue_adapter = :inline$/
     )
+  end
+
+  it "creates sidekiq configuration" do
+    sidekiq_config_file = IO.read("#{project_path}/config/sidekiq.yml")
+
+    expect(sidekiq_config_file).to include ':concurrency: 1'
   end
 
   it "configs bullet gem in development" do

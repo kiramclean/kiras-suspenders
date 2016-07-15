@@ -87,6 +87,7 @@ module Suspenders
       build :configure_generators
       build :configure_i18n_for_missing_translations
       build :configure_quiet_assets
+      build :add_development_procfile
     end
 
     def setup_test_environment
@@ -96,7 +97,6 @@ module Suspenders
       build :set_up_hound
       build :generate_rspec
       build :configure_rspec
-      build :configure_background_jobs_for_rspec
       build :enable_database_cleaner
       build :provide_shoulda_matchers_config
       build :configure_spec_support_features
@@ -110,6 +110,7 @@ module Suspenders
       say 'Setting up the production environment'
       build :configure_smtp
       build :configure_rack_timeout
+      build :configure_background_jobs
       build :enable_rack_canonical_host
       build :enable_rack_deflater
       build :setup_asset_host
@@ -136,7 +137,7 @@ module Suspenders
       build :configure_time_formats
       build :setup_default_rake_task
       build :replace_default_puma_configuration
-      build :set_up_forego
+      build :set_up_procfile
       build :setup_rack_mini_profiler
     end
 
