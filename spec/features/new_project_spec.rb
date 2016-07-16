@@ -83,7 +83,7 @@ RSpec.describe "Suspend a new project with default configuration" do
   it "ensures Gemfile contains `rack-mini-profiler`" do
     gemfile = IO.read("#{project_path}/Gemfile")
 
-    expect(gemfile).to include %{gem "rack-mini-profiler", require: false}
+    expect(gemfile).to include %{gem 'rack-mini-profiler', require: false}
   end
 
   it "ensures .sample.env defaults to RACK_MINI_PROFILER=0" do
@@ -247,7 +247,7 @@ RSpec.describe "Suspend a new project with default configuration" do
   it "sets up heroku specific gems" do
     gemfile_file = IO.read("#{project_path}/Gemfile")
 
-    expect(gemfile_file).to include %{gem "rails_stdout_logging"}
+    expect(gemfile_file).to include %{gem 'rails_stdout_logging'}
   end
 
   def app_name
