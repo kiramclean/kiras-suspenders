@@ -259,17 +259,9 @@ RSpec.describe "Suspend a new project with default configuration" do
     expect(gemfile).to match(/high_voltage/)
   end
 
-  it "adds and configures bourbon, neat, and refills" do
-    gemfile = read_project_file("Gemfile")
-
-    expect(gemfile).to match(/bourbon/)
-    expect(gemfile).to match(/neat/)
-    expect(gemfile).to match(/refills/)
-  end
-
-  it "configures bourbon, neat, and refills" do
-    app_css = read_project_file(%w(app assets stylesheets application.scss))
-    expect(app_css).to match(/normalize-rails.*bourbon.*neat.*base.*refills/m)
+  it 'configures bourbon, neat, and refills' do
+    app_css = read_project_file(%w(app assets stylesheets application.sass))
+    expect(app_css).to match(/variables.*mixins.*defaults.*flashes.*forms.*buttons/m)
   end
 
   def development_config

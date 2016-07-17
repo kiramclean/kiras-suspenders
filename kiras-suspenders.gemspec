@@ -28,7 +28,6 @@ This is a base Rails project that you can upgrade. It's forked from Thoughbot's
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.version = Suspenders::VERSION
 
-  s.add_dependency 'bitters', '~> 1.3'
   s.add_dependency 'bundler', '~> 1.3'
   s.add_dependency 'rails', Suspenders::RAILS_VERSION
 
