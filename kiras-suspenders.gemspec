@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path('../lib', __FILE__)
-require 'suspenders/version'
+require 'kiras-suspenders/version'
 require 'date'
 
 Gem::Specification.new do |s|
@@ -9,18 +9,19 @@ Gem::Specification.new do |s|
   s.date = Date.today.strftime('%Y-%m-%d')
 
   s.description = <<-HERE
-Suspenders is a base Rails project that you can upgrade. It is used by
-thoughtbot to get a jump start on a working app. Use Suspenders if you're in a
-rush to build something amazing; don't use it if you like missing deadlines.
+This is a base Rails project that you can upgrade. It's forked from Thoughbot's
+ suspenders gem. I use to get a head start on building a working app. Use
+ Suspenders if you're in a rush to build something amazing; don't use it
+ if you like missing deadlines.
   HERE
 
-  s.email = 'support@thoughtbot.com'
-  s.executables = ['suspenders']
+  s.email = 'email@kiramclean.com'
+  s.executables = ['kiras-suspenders']
   s.extra_rdoc_files = %w[README.md LICENSE]
   s.files = `git ls-files`.split("\n")
-  s.homepage = 'http://github.com/thoughtbot/suspenders'
+  s.homepage = 'https://github.com/kiramclean/kiras-suspenders'
   s.license = 'MIT'
-  s.name = 'suspenders'
+  s.name = 'kiras-suspenders'
   s.rdoc_options = ['--charset=UTF-8']
   s.require_paths = ['lib']
   s.summary = "Generate a Rails app using thoughtbot's best practices."
