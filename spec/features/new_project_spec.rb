@@ -254,11 +254,6 @@ RSpec.describe "Suspend a new project with default configuration" do
     SuspendersTestHelpers::APP_NAME
   end
 
-  it "adds high_voltage" do
-    gemfile = IO.read("#{project_path}/Gemfile")
-    expect(gemfile).to match(/high_voltage/)
-  end
-
   it 'configures bourbon, neat, and refills' do
     app_css = read_project_file(%w(app assets stylesheets application.sass))
     expect(app_css).to match(/variables.*mixins.*defaults.*flashes.*forms.*buttons/m)
