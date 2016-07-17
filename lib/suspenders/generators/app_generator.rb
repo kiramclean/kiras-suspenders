@@ -123,6 +123,7 @@ module Suspenders
       say 'Creating suspenders views'
       build :create_partials_directory
       build :create_shared_flashes
+      build :create_full_title_helper
       build :create_shared_javascripts
       build :create_shared_css_overrides
       build :create_application_layout

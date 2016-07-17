@@ -1,0 +1,10 @@
+module FullTitleHelper
+  def full_title(page_title = '')
+    base_title = '<%= app_name.humanize %>'
+    if page_title.blank?
+      base_title
+    else
+      page_title + ' | ' + base_title
+    end
+  end
+end

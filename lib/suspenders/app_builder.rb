@@ -192,6 +192,11 @@ module Suspenders
       copy_file "flashes_helper.rb", "app/helpers/flashes_helper.rb"
     end
 
+    def create_full_title_helper
+      template "full_title_helper.rb.erb", "app/helpers/full_title_helper.rb"
+      template "full_title_helper_spec.rb.erb", "spec/helpers/full_title_helper_spec.rb"
+    end
+
     def create_shared_javascripts
       copy_file '_javascript.html.slim', 'app/views/application/_javascript.html.slim'
     end
