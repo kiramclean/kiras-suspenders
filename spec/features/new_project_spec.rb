@@ -254,7 +254,7 @@ RSpec.describe "Suspend a new project with default configuration" do
     SuspendersTestHelpers::APP_NAME
   end
 
-  it 'configures bourbon, neat, and refills' do
+  it 'adds custom sass' do
     app_css = read_project_file(%w(app assets stylesheets application.sass))
     expect(app_css).to match(/variables.*mixins.*defaults.*flashes.*forms.*buttons/m)
   end

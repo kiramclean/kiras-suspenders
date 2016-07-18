@@ -24,7 +24,7 @@ This is a base Rails project that you can upgrade. It's forked from Thoughbot's
   s.name = 'kiras-suspenders'
   s.rdoc_options = ['--charset=UTF-8']
   s.require_paths = ['lib']
-  s.summary = "Generate a Rails app using thoughtbot's best practices."
+  s.summary = "Generate a Rails app using thoughtbot's best practices and my custom defaults."
   s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.version = Suspenders::VERSION
 
