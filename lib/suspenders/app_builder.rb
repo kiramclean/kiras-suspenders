@@ -357,8 +357,8 @@ Rack::Timeout.timeout = (ENV["RACK_TIMEOUT"] || 10).to_i
 
     def add_variables_file
       copy_file(
-        '_variables.sass',
-        'app/assets/stylesheets/base/_variables.sass')
+        '_variables.scss',
+        'app/assets/stylesheets/base/_variables.scss')
     end
 
     def add_default_styles
