@@ -1,4 +1,4 @@
-=button($color = $buttons)
+=button($color: $buttons)
   +shadow(darken($color, 5%))
   background: $color
   border-radius: 1px
@@ -11,13 +11,13 @@
   margin: $little-space 0
   padding: $little-space $med-space
   text-transform: uppercase
+  transition: all $base-duration $base-timing
 
   a
-    color: $background-color
+    color: rgba($background-color, 1)
 
   &:hover
     background: darken($color, 5%)
-    transition: all $long-duration $base-timing
 
   &:active
     background: darken($color, 15%)
@@ -30,6 +30,9 @@
     outline: none
 
 button,
+input[type="button"],
+input[type="reset"],
 input[type="submit"]
   +button
+
 
