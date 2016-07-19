@@ -53,7 +53,6 @@ module Suspenders
       invoke :setup_analytics
       invoke :setup_bundler_audit
       invoke :setup_spring
-      invoke :generate_default
       invoke :outro
     end
 
@@ -142,7 +141,13 @@ module Suspenders
 
     def setup_stylesheets
       say 'Set up stylesheets'
-      build :setup_stylesheets
+      build :add_css_config
+      build :add_variables_file
+      build :add_default_styles
+      build :add_mixins_styles
+      build :add_flashes_styles
+      build :add_buttons_styles
+      build :add_forms_styles
     end
 
     def setup_git
@@ -222,14 +227,6 @@ module Suspenders
 
     def remove_routes_comment_lines
       build :remove_routes_comment_lines
-    end
-
-    def generate_default
-      run("spring stop")
-
-      generate("suspenders:stylesheet_base")
-
-      bundle_command "install"
     end
 
     def outro

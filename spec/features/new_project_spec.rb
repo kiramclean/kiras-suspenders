@@ -256,7 +256,7 @@ RSpec.describe "Suspend a new project with default configuration" do
 
   it 'adds custom sass' do
     app_css = read_project_file(%w(app assets stylesheets application.sass))
-    expect(app_css).to match(/variables.*mixins.*defaults.*flashes.*forms.*buttons/m)
+    expect(app_css).to match(/variables.*mixins.*defaults.*components/m)
   end
 
   def development_config
