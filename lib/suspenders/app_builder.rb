@@ -212,6 +212,8 @@ module Suspenders
       template 'suspenders_layout.html.slim.erb',
         'app/views/layouts/application.html.slim',
         force: true
+
+      remove_file 'app/views/layouts/application.html.erb'
     end
 
     def use_postgres_config_template
